@@ -1,9 +1,13 @@
-import { Text, View } from "react-native";
+import { Text, View, FlatList } from "react-native";
+import { meditations } from "../data";
+import { MeditationListItem } from "../components/MeditationListItem";
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>HomeScreen</Text>
-    </View>
+    <FlatList
+      data={meditations}
+      contentContainerClassName="gap-5"
+      renderItem={({ item }) => <MeditationListItem meditation={item} />}
+    />
   );
 }
